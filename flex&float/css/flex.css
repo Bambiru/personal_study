@@ -1,0 +1,118 @@
+@charset "utf-8";
+@import url(./font.css);
+@import url(./notosans_kr_CDN.css);
+
+body {
+    font-family: 'Noto Sans KR',sans-serif;
+    font-size: 30px;
+    font-weight: 500;
+    color: #fff;
+}
+
+.flex_part {
+    padding-bottom: 250px;
+}
+.bgi{
+    width: 1920px;
+    margin: 0 auto;
+    height: 434px;
+    background-image: url(../images/Rectangle\ 14.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.bgi h2{
+    font-size: 48px;
+    font-weight: 700;
+    text-align: center;
+    padding-top: 99px;
+    margin-bottom: 92px;      
+}
+/* drama_list */
+.drama_list{
+    width: 1920px;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content:end;
+}
+
+.drama_list .drama{
+    position: relative;
+    /* 268-92 = 176 */
+    top: -176px;
+    margin-left: 40px;
+}
+.drama_list .drama p {
+    font-size: 24px;
+    margin-top: 17px;
+    color: #000;
+}
+
+hr {
+    width: 1280px;
+    border: 1px solid rgba(153, 153, 153, 1);
+    margin: 0 auto;
+}
+
+/* drama_id */
+.drama_id {
+    width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: row nowrap;
+    color: #000;
+    padding-top: 60px;
+}
+.drama_id .detail{
+    padding-left: 55px;
+}
+.drama_id .detail h2{
+    font-size: 36px;
+    line-height: 1.5;
+    font-weight: 700;
+}
+.drama_id .detail>p{
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 28.8px;
+    margin-bottom: 44px;
+}
+
+.cast_more{
+    /* 플렉스 */
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    margin-bottom: 27px;
+}
+.cast_more h3{
+    font-size: 24px;
+    font-weight: 700;
+}
+.cast_more p{
+    font-size: 18px;
+    font-weight: 500;
+    color: rgba(153, 153, 153, 1);
+}
+.cast_list {
+    /* 플렉스 */
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+.cast_list img{
+    margin-right: 24px;
+}
+.cast_list li:last-child img{
+    margin-right: 0 !important;
+}
+.name {
+    font-size: 18px;
+    font-weight: 700;
+    margin:11px 0 6px 0;
+}
+.real_name {
+    font-size: 18px;
+    font-weight: 500;
+    color: rgba(153, 153, 153, 1);
+}

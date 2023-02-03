@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>api테스트</title>
+    <!-- 제이쿼리 CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+    <style>
+        table,
+        th,
+        tr,
+        td {
+            padding: 20px;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="button" value="버튼임" onclick="q1()">
+    <table id="aaa">
+        <!-- <tr>
+            <th id="hi">안녕1</th>
+            <th>안녕2</th>
+            <th>안녕3</th>
+        </tr> -->
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+
+
+    </table>
+
+    <script>
+        function q1() {
+            $('#aaa').empty();
+            // API 통신 하는 제이쿼리 코드 
+            $.ajax({
+            type: "GET",
+            url: "https://apis.data.go.kr/6300000/openapi2022/tourspot/gettourspot?serviceKey=lUgsr%2B3AG53jpb%2BbGH%2B0cE0WyzPGuVzNSLqQ%2B0uSFyIETI2Upa2%2BeGkGYezdVsdaeBjYiQmtLjfD9e5g9NJlsA%3D%3D&pageNo=1&numOfRows=10",
+            data: {},
+            success: function (response) {
+
+                    console.log(response['response']['body']['items'][Math.ceil(Math.random()*9)])
+                    console.log(response['response']['body']['items'][Math.ceil(Math.random()*9)]['tourspotNm'])
+                    
+                    var hi = response['response']['body']['items'][Math.ceil(Math.random()*9)]['tourspotNm'];
+                    // console.log(hi);
+                    
+                    // temp_html 변수에 할당
+                    var temp_html = `<tr>
+                                        <th id="hi">${hi}</th>
+                                        <th>안녕2</th>
+                                        <th>안녕3</th>
+                                    </tr>`
+                    $('#aaa').append(temp_html);
+
+            }
+        })
+        }
+
+
+
+    </script>
+    
+</body>
+
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="reset.css">
+  <title>회원가입창</title>
+
+  <style>
+    *{
+      font-family:'Anton', sans-serif;
+    }
+    body{
+      background-color: #ffe4c4;
+    }
+    #wrap{
+      width: 960px;
+      margin: 10% auto;
+      text-align: center;
+    }
+    fieldset{
+      background-color: #fff;
+      border-radius: 20px 30px;
+      padding: 20px;
+    }
+    legend{
+      text-align:left;
+      color:#fff;
+      background-color: #ff7f50;
+      border-radius: 10%;
+      padding: 5px;
+    }
+    fieldset, legend {
+      border: 3px double #ff7f50;
+    }
+
+    li{
+      text-align: left;
+      margin: 10px;
+      padding-bottom: 5px;
+    }
+    button{
+      border: 1px solid gainsboro;
+      padding: 3px;
+      margin-left: 2px;
+    }
+    input{
+      margin-top: 10px;
+      padding: 4px;
+      border-radius:5%;
+      border: 1px solid gainsboro;
+    }
+    p{
+      display: inline-block;
+    }
+    span{
+      color:grey;
+    }
+    option{
+      border:1px solid gainsboro;
+    }
+    .birth{
+      width: 50px;
+      height: 11px;
+      border:1px solid dimgray;
+    }
+  </style>
+  <script></script>
+</head>
+<body>
+<div id="wrap">
+  <form action="#" method="post">
+    <fieldset>
+      <legend>회원가입</legend>
+      <!-- id(중복확인버튼 -->
+        <ul>
+          <li>
+            <label for="a_id">아이디<br></label>
+            <input type="text" id="a_id" autofocus required autocomplete="off" size="20">
+            <button>확인</button>
+          </li>
+          <!-- pw -->
+          <li>
+            <label for="a_pw">비밀번호<br></label>
+            <input type="password" id="a_pw" required >
+          </li>
+          <!-- pw확인 -->
+          <li>
+            <label for="a_pw2">비밀번호확인<br></label>
+            <input type="password" id="a_pw2" required placeholder="다시쓰세요">
+          </li>
+          <!-- email -->
+          <li>
+            <label for="a_email">이메일주소<br></label>
+            <input type="email" name="a_email" id="a_email" required placeholder="이메일 주소를 입력하세요">
+          </li>
+          <li>
+            <label for="a_phone">연락처<br></label>
+            <input type="tel" name="a_phone" id="a_phone" required placeholder="-빼고 쓰세요">
+          </li>
+          <!-- 성별(라디오) -->
+          <li>
+            <label for="a_gender">성별<br></label>
+            <input type="radio" name="a_gender" id="man">남
+            <input type="radio" name="a_gender" id="women" checked>여
+          </li>
+          <!-- 생년월일(yyyy년 mm월 dd일) -->
+          <li>
+            <label for="a_birth">생년월일<br></label>
+            <!-- <input class="birth" type="number" name="a_birth" id="a_y" placeholder="yyyy" value="" min="1920" max="2023">
+            <input class="birth" type="number" name="a_birth" id="a_m" placeholder="mm" value="" min="1" max="12" size="1">월
+            <input class="birth" type="number" name="a_birth" id="a_d" placeholder="dd" value="" min="1" max="31" size="1">일 -->
+
+            <input class="birth" type="number" name="yyyy" id="yyyy" placeholder="yyyy" value="" min="1920" max="2023">
+            <label for="yyyy">년 </label>
+            <select name="mm" id="mm">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+            </select>
+            <label for="mm">월 </label>
+            <select name="dd" id="dd">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+              <option value="13">13</option>
+              <option value="14">14</option>
+              <option value="15">15</option>
+              <option value="16">16</option>
+              <option value="17">17</option>
+              <option value="18">18</option>
+              <option value="19">19</option>
+              <option value="20">20</option>
+              <option value="21">21</option>
+              <option value="22">22</option>
+              <option value="23">23</option>
+              <option value="24">24</option>
+              <option value="25">25</option>
+              <option value="26">26</option>
+              <option value="27">27</option>
+              <option value="28">28</option>
+              <option value="29">29</option>
+              <option value="30">30</option>
+              <option value="31">31</option>
+            </select>
+            <label for="dd">일</label>
+          </li>
+          <!-- 개인정보이용동의 체크박스 -->
+          <li>
+            <label for="a_check"><p>밤비가 귀엽다고 생각된다면, 개인정보이용동의 체크해라.</p></label>
+            <input type="checkbox" name="a_check" id="a_check">
+          </li>
+          <input type="submit" value="회원가입">
+          <input type="reset" value="취소">
+        </ul>
+    </fieldset>
+</form>
+</div>
+</body>
+</html>
