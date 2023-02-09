@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>밤비움직이기</title>
+    <!-- 부트스트랩 CDN -->
+    <link rel="shortcut icon" href="./images/favmc32.png">
+    <link rel="apple-touch-icon" href="./images/favmc180.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <!-- 1.제이쿼리 코어파일 -->
+    <script src="./js/jquery-1.12.4.min.js"></script>
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <script src="./js/jquery-3.4.1.min.js"></script>
+    <!-- 2.제이쿼리 CDN 방식이용 -->
+    <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <style>
+        body{
+            padding: 100px;
+        }
+        h3{
+            font-weight: 600;
+            font-size: 20px;
+            padding-top: 10px;
+
+        }
+        #bg{
+            width: 280px;
+            height: 400px;
+            background-color: cadetblue;
+            text-align: center;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 5px #000; 
+        }
+        button{
+            cursor: pointer;
+            font-size: 12px;
+            background-color: #fff;
+            padding: 7px;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+            box-shadow: 1px 2px 1px #ccc;
+            margin-left: 5px;
+        }
+        #wrap {
+            width: 200px;
+            height: 200px;
+            margin: 20px auto;
+            border: 1px solid #ccc;
+            box-shadow: 2px 2px 3px #ccc;
+            border-radius: 3px;
+            position: relative;
+            overflow: hidden;
+            background-color: #fff;
+        }
+        .cicle {
+            width: 50px;
+            height: 50px;
+            background: url(./images/1.jpg) no-repeat;
+            background-size: cover;
+            cursor: pointer;
+            /* 포지션 */
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            z-index: 1;
+        }
+        .reset{
+            margin-top: 20px;
+            transform: translateX(60px);
+        }
+
+    </style>
+    <script>
+        // $(function(){});
+        $(document).ready(function(){
+            /* 1.animate({속성명:속성값(숫자),시간}, 속도,콜백함수);
+                a.속성 : 반드시 매개변수값으로 입력(속성값이 숫자값으로 사용되는 속성들만 사용가능)
+                    =>제이쿼리 코어 플러그인 경우
+                b.시간 : 'slow','normal','fast'
+                c.속도 : swing(기본값), linear(동일속도)
+                d.콜백함수 : 해당 메서드가 실행이 된 이후 호출하여 사용하는 함수 */
+            
+            /* $('div').mouseover(function(){
+                $(this).stop().animate({width:100,height:100},'slow','linear');
+            });
+            
+            $('div').mouseout(function(){
+                $(this).stop().animate({width:50,height:50},'slow','linear');
+            }); */
+
+            // 위 50px이동
+            $('button').eq(0).click(function(){
+            var top = $('.cicle').css('top');
+                if(top<='0px'){
+                } else {
+                    $('.cicle').stop().animate({top:'-=50'},'normal','linear');
+                }
+            });
+            
+            // 오른쪽 50px이동
+            $('button').eq(1).click(function(){
+                var left = Number($('.cicle').css('left').replace('px',''));
+                if(left<'150'){
+                    $('.cicle').stop().animate({left:'+=50'},'fast','linear');
+                }
+            });
+            
+            // 아래 50px이동
+            $('button').eq(2).click(function(){
+                var bottom = parseInt($('.cicle').css('top'));
+                if(bottom<'150'){
+                    $('.cicle').stop().animate({top:'+=50'},'fast','linear');
+                }
+                });
+            
+                // 왼쪽 50px이동
+            $('button').eq(3).click(function(){
+                var left = $('.cicle').css('left');
+                if(left<='0px'){
+                } else {
+                $('.cicle').stop().animate({left:'-=50'},'fast','swing');
+                }
+            });
+
+            /* 버튼3을 클릭할때 처음 위치로 애니메이션 동작이 되도록 코딩 */
+            $('button').eq(-1).click(function(){
+                $('.cicle').stop().animate({left:'0',top:'0'},'fast','swing');
+            });
+            
+        });
+    </script>
+</head>
+<body>
+    <div id="bg">
+    <h3>밤비</h3>
+    <div id="wrap">
+        <div class="cicle"></div>
+    </div>
+    <div>
+    <button>위</button>
+    <button>오른쪽</button>
+    <button>아래</button>
+    <button>왼쪽</button>
+    </div>
+    <button class="reset">처음부터</button>
+    </div>
+</body>
+</html>

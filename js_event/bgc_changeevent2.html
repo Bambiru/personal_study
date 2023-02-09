@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배경색변경</title>
+    <style>
+        .bgc{
+            width: 960px;
+            margin: 100px auto;
+            text-align: center;
+            }
+        button {
+            background-color: #fff;
+            font-family: 'Roboto',sans-serif;
+            font-weight: 700;
+            padding: 20px;
+            border-radius: 10px;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+
+            var bgc = ["tomato","lightblue",'lightpink','lightgray','lightpurp0le','rgb(184, 119, 119)'];
+            var i = 0;
+            function bgcCh(){
+                var ch = document.querySelector('body');
+                // console.log(ch);
+                ch.style.backgroundColor = bgc[i];
+                i++;
+                if(i>=bgc.length){
+                    i=0;
+                }
+            }
+
+        document.querySelector('button').addEventListener('click',bgcCh);
+
+        }
+    </script>
+</head>
+<body>
+    <div class="bgc">
+        <button>버튼</button>
+    </div>
+</body>
+</html>
