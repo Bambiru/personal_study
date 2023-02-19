@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>evnet</title>
+    <script src="./js/jquery-1.12.4.min.js"></script>
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <script src="./js/jquery-3.4.1.min.js"></script>
+    <style>
+        body{
+            width: 3200px;
+            height: 5000px;
+        }
+        #wrap {
+            position: fixed;
+            left: 10px;
+            top: 10px;
+        }
+    </style>
+    <script>
+        // $(function(){});
+        $(document).ready(function(){
+
+            $(window).scroll(function(){
+                var sct = $(this).scrollTop();
+                var scl = $(this).scrollLeft();
+                $('#sct').text(sct);
+                $('#scl').text(scl);
+            }
+            );
+
+
+        });
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <h2>Scroll</h2>
+        <p>scrollTop: <span id="sct">0</span>px</p>
+        <p>scrollLeft: <span id="scl">0</span>px</p>
+    </div>
+</body>
+</html>
